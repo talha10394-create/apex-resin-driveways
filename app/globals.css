@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+    --font-playfair: 'Playfair Display', serif;
+    
+    /* Fluid typography scale for Lighthouse 100, preventing Layout Shifts (CLS) */
+    --text-hero-title: clamp(2.25rem, 5vw + 1rem, 5rem);
+    --text-section-title: clamp(1.75rem, 3.5vw + 0.5rem, 3.5rem);
+    --text-lead: clamp(1rem, 1.2vw + 0.2rem, 1.25rem);
+    --text-body: clamp(0.875rem, 0.2vw + 0.75rem, 1rem);
+  }
+
+  html {
+    scroll-behavior: initial;
+    background-color: #0B0B0C;
+    color: #F5F5F7;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-jakarta);
+    background-color: #0B0B0C;
+    overflow-x: hidden;
+  }
+
+  /* Enhance focus outlines across all interactive elements for AAA compliance */
+  *:focus-visible {
+    outline: 2px solid #C5A880 !important;
+    outline-offset: 4px;
+  }
+}
+
+/* Lenis Custom Smooth Scroll Setup */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Premium Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A1A1E;
+  border: 1px solid #0B0B0C;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A880;
+}
+
+/* High-End Agency Performance Optimizations */
+.section-lazy {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
+/* GPU Hardware Acceleration for buttery smooth GSAP timelines */
+.will-animate {
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Premium Interactive Glow Elements */
+.gold-glow {
+  box-shadow: 0 0 50px -10px rgba(197, 168, 128, 0.12);
+}
+
+.premium-glow-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-glow-hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(197, 168, 128, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg) translateX(-100%);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-glow-hover:hover::after {
+  transform: skewX(-25deg) translateX(100%);
+}
