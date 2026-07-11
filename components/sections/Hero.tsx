@@ -54,15 +54,11 @@ export default function Hero() {
         ref={bgRef} 
         className="absolute inset-0 w-full h-full select-none pointer-events-none z-0 will-animate"
       >
-        <Image
-          src="/images/Hero.jpeg"
-          alt="Bespoke Luxury Resin Bound Driveway Entrance of a Modern Premium Villa"
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-          className="object-cover object-bottom"
-          loading="eager"
-        />
+        <img
+  src="/images/Hero.jpeg"
+  alt="Hero"
+  className="absolute inset-0 w-full h-full object-cover object-bottom"
+/>
         {/* Cinematic gradient overlays targeting perfect visual readability and structural contrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-brand-dark-base via-brand-dark-base/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark-base/80 via-transparent to-brand-dark-base/50" />
