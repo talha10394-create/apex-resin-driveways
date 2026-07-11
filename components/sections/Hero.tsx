@@ -55,7 +55,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full select-none pointer-events-none z-0 will-animate"
       >
         <Image
-          src="/images/hero.jpeg"
+          src="/images/Hero.jpeg"
           alt="Bespoke Luxury Resin Bound Driveway Entrance of a Modern Premium Villa"
           fill
           priority
